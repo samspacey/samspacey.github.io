@@ -5,8 +5,8 @@ url: "/photos/"
 summary: photos
 disableShare: true
 resources: 
-  src: "gallery/*.png"
+  src: "images/*.png"
   name: gallery-:counter
   title: gallery-title-:counter
 ---
-{{< gallery folder="gallery" title="gallery" >}}
+{{< gallery folder="images" title="My Gallery" >}}

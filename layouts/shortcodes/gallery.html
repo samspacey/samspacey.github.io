@@ -1,12 +1,11 @@
 <link rel="stylesheet" href="/plugins/photoswipe/photoswipe.css">
 <link rel="stylesheet" href="/plugins/photoswipe/default-skin/default-skin.css">
-{{ $galleryimages := .Page.Resources.Match (printf "%s-*" (.Get "folder")) }}
-
+{{ $images := .Page.Resources.ByType "image" }}
 <h4 class="title">{{ .Get "title" }}</h4>
 <div class="row">
   <div class="12u$">
 	<div class="gallery" itemscope itemtype="http://schema.org/ImageGallery">
-{{ range $galleryimages }}
+{{ range $images }}
 {{ $thumbnail := .Resize "320x" }}
 
 		<figure itemscope itemtype="http://schema.org/ImageObject" class="image gallery-item">
