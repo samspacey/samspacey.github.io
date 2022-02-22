@@ -96,7 +96,7 @@ params:
     hiddenInSingle: true # hide on single page
 
   editPost:
-    URL: "https://github.com/<path_to_repo>/content"
+    URL: "https://github.com/samspacey/samspacey.github.io/content"
     Text: "Suggest Changes" # edit text
     appendFilePath: true # to append file path to Edit link
 
@@ -112,14 +112,18 @@ params:
     keys: ["title", "permalink", "summary", "content"]
 menu:
   main:
-    - identifier: categories
-      name: categories
-      url: /categories/
+    - identifier: about
+      name: about
+      url: /about/
       weight: 10
-    - identifier: tags
-      name: tags
-      url: /tags/
+    - identifier: photos
+      name: photos
+      url: /photos/
       weight: 20
+    - identifier: cv
+      name: cv
+      url: /cv/
+      weight: 25
     - identifier: samspacey
       name: samspacey.io
       url: https://samspacey.io
