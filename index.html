@@ -1,1 +1,402 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Athonics - Expert consulting in data infrastructure, AI solutions, and long-term data management. Proven methodologies for technical excellence.">
+    <title>Athonics - Data Infrastructure & AI Consulting</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary-color: #0f172a;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --bg-light: #f8fafc;
+            --border-color: #e2e8f0;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--white);
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--white);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #1e3a8a 100%);
+            color: var(--white);
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            line-height: 1.7;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .cta-button:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* Introduction Section */
+        .intro-section {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .intro-section h2 {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .intro-section p {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 2.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .service-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .service-card ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .service-card li {
+            color: var(--text-secondary);
+            padding: 0.4rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .service-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background-color: var(--bg-light);
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .cta-section p {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        .copyright {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .intro-section h2,
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            nav {
+                padding: 1rem;
+            }
+
+            .container {
+                padding: 3rem 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="logo">Athonics</a>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Expert Data Infrastructure & AI Solutions</h1>
+            <p>Transform your data challenges into competitive advantages with proven methodologies and technical excellence. We deliver scalable infrastructure, AI implementation, and long-term support for forward-thinking organizations.</p>
+            <a href="#contact" class="cta-button">Start a Conversation</a>
+        </div>
+    </section>
+
+    <!-- Introduction -->
+    <div class="container">
+        <section class="intro-section">
+            <h2>Built for Technical Excellence</h2>
+            <p>Athonics partners with technical decision-makers and business leaders to design, implement, and maintain robust data infrastructure and AI solutions. Our proven methodology ensures your systems are built right the first time and evolve with your needs.</p>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services">
+            <div class="services-grid">
+                <!-- Service 1: Data Infrastructure -->
+                <div class="service-card">
+                    <div class="service-icon">⚙️</div>
+                    <h3>Data Infrastructure Consulting</h3>
+                    <p>Design and implement scalable, maintainable data pipelines and platforms tailored to your business needs.</p>
+                    <ul>
+                        <li>Proven architecture methodology</li>
+                        <li>Modern stack expertise</li>
+                        <li>Performance optimization</li>
+                        <li>End-to-end implementation</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2: Long-term Management -->
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3>Long-term Data Management</h3>
+                    <p>Ongoing support and optimization to ensure your data infrastructure continues delivering value.</p>
+                    <ul>
+                        <li>Proactive monitoring</li>
+                        <li>Performance tuning</li>
+                        <li>Scalability planning</li>
+                        <li>Technical support</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3: AI Solutions -->
+                <div class="service-card">
+                    <div class="service-icon">🤖</div>
+                    <h3>AI Solutions & Advisory</h3>
+                    <p>Strategic guidance and hands-on implementation for AI adoption and integration into your business.</p>
+                    <ul>
+                        <li>AI strategy consulting</li>
+                        <li>Custom implementations</li>
+                        <li>Use case development</li>
+                        <li>Team enablement</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <h2>Ready to Transform Your Data Infrastructure?</h2>
+        <p>Let's discuss how Athonics can help you build scalable, maintainable solutions that drive real business value.</p>
+        <a href="mailto:contact@athonics.com" class="cta-button">Get in Touch</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <p class="copyright">&copy; 2025 Athonics. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
