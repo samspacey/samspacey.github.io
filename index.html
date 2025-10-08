@@ -13,18 +13,21 @@
         }
 
         :root {
-            --primary-color: #2563eb;
-            --primary-dark: #1e40af;
-            --secondary-color: #0f172a;
-            --text-primary: #1e293b;
-            --text-secondary: #64748b;
-            --bg-light: #f8fafc;
-            --border-color: #e2e8f0;
+            --primary-color: #FF5349;
+            --primary-dark: #CC422A;
+            --primary-light: #FF7A72;
+            --secondary-color: #1a1a1a;
+            --accent-color: #00D4AA;
+            --text-primary: #1a1a1a;
+            --text-secondary: #666666;
+            --bg-light: #f5f5f5;
+            --bg-dark: #0a0a0a;
+            --border-color: #e0e0e0;
             --white: #ffffff;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-family: Monaco, 'Courier New', monospace;
             line-height: 1.6;
             color: var(--text-primary);
             background-color: var(--white);
@@ -50,10 +53,23 @@
         }
 
         .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+            filter: invert(1);
+        }
+
+        .logo-text {
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--secondary-color);
-            text-decoration: none;
+            letter-spacing: -0.5px;
         }
 
         .nav-links {
@@ -75,15 +91,30 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--secondary-color) 0%, #1e3a8a 100%);
+            background: linear-gradient(135deg, var(--bg-dark) 0%, var(--secondary-color) 100%);
             color: var(--white);
             padding: 6rem 2rem;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(255, 83, 73, 0.15) 0%, transparent 50%);
+            pointer-events: none;
         }
 
         .hero-content {
             max-width: 900px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
         .hero h1 {
@@ -163,7 +194,8 @@
 
         .service-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(255, 83, 73, 0.15);
+            border-color: var(--primary-light);
         }
 
         .service-icon {
@@ -312,7 +344,10 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <a href="/" class="logo">Athonics</a>
+            <a href="/" class="logo">
+                <img src="logo.png" alt="Athonics Logo">
+                <span class="logo-text">athonics</span>
+            </a>
             <ul class="nav-links">
                 <li><a href="#services">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
