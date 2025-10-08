@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://samspacey.github.io/sitemap.xml
