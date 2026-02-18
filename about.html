@@ -5,370 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="About Athonics - Our mission, methodology, and approach to data infrastructure and AI consulting.">
     <title>About - Athonics</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary-color: #FF5349;
-            --primary-dark: #CC422A;
-            --primary-light: #FF7A72;
-            --secondary-color: #1a1a1a;
-            --accent-color: #00D4AA;
-            --text-primary: #1a1a1a;
-            --text-secondary: #666666;
-            --bg-light: #f5f5f5;
-            --bg-dark: #0a0a0a;
-            --border-color: #e0e0e0;
-            --white: #ffffff;
-        }
-
-        body {
-            font-family: Monaco, 'Courier New', monospace;
-            line-height: 1.6;
-            color: var(--text-primary);
-            background-color: var(--white);
-        }
-
-        nav {
-            background-color: var(--white);
-            border-bottom: 1px solid var(--border-color);
-            padding: 1rem 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            text-decoration: none;
-        }
-
-        .logo img {
-            height: 40px;
-            width: auto;
-            filter: invert(1);
-        }
-
-        .logo-text {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--secondary-color);
-            letter-spacing: -0.5px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--primary-color);
-        }
-
-        .page-header {
-            background: linear-gradient(135deg, var(--bg-dark) 0%, var(--secondary-color) 100%);
-            color: var(--white);
-            padding: 4rem 2rem 3rem;
-            text-align: center;
-        }
-
-        .page-header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .page-header p {
-            font-size: 1.15rem;
-            opacity: 0.9;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
-
-        .content-section {
-            margin-bottom: 4rem;
-        }
-
-        .content-section h2 {
-            font-size: 2rem;
-            color: var(--secondary-color);
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-        }
-
-        .content-section h3 {
-            font-size: 1.5rem;
-            color: var(--secondary-color);
-            margin-bottom: 1rem;
-            margin-top: 2rem;
-            font-weight: 600;
-        }
-
-        .content-section p {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-
-        .methodology-steps {
-            display: grid;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .step {
-            background-color: var(--bg-light);
-            padding: 2rem;
-            border-radius: 8px;
-            border-left: 4px solid var(--primary-color);
-        }
-
-        .step-number {
-            color: var(--primary-color);
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .step h4 {
-            font-size: 1.3rem;
-            color: var(--secondary-color);
-            margin-bottom: 0.75rem;
-        }
-
-        .step p {
-            color: var(--text-secondary);
-            font-size: 1rem;
-            line-height: 1.7;
-            margin-bottom: 0;
-        }
-
-        .values-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .value-card {
-            background-color: var(--white);
-            border: 1px solid var(--border-color);
-            padding: 2rem;
-            border-radius: 8px;
-        }
-
-        .value-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .value-card h4 {
-            font-size: 1.2rem;
-            color: var(--secondary-color);
-            margin-bottom: 0.75rem;
-        }
-
-        .value-card p {
-            color: var(--text-secondary);
-            font-size: 1rem;
-            line-height: 1.7;
-            margin-bottom: 0;
-        }
-
-        .differentiators {
-            background-color: var(--bg-light);
-            padding: 3rem;
-            border-radius: 8px;
-            margin-top: 2rem;
-        }
-
-        .differentiators ul {
-            list-style: none;
-            margin-top: 1.5rem;
-        }
-
-        .differentiators li {
-            color: var(--text-secondary);
-            padding: 1rem 0;
-            padding-left: 2rem;
-            position: relative;
-            font-size: 1.05rem;
-            line-height: 1.7;
-        }
-
-        .differentiators li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--primary-color);
-            font-weight: bold;
-            font-size: 1.5rem;
-        }
-
-        .cta-section {
-            background-color: var(--bg-light);
-            padding: 4rem 2rem;
-            text-align: center;
-            margin-top: 4rem;
-        }
-
-        .cta-section h2 {
-            font-size: 2rem;
-            color: var(--secondary-color);
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .cta-section p {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 1rem 2.5rem;
-            font-size: 1.1rem;
-            font-weight: 600;
-            text-decoration: none;
-            border-radius: 6px;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-
-        .cta-button:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-2px);
-        }
-
-        footer {
-            background-color: var(--secondary-color);
-            color: var(--white);
-            padding: 3rem 2rem 2rem;
-            text-align: center;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: var(--white);
-            text-decoration: none;
-            opacity: 0.9;
-            transition: opacity 0.3s;
-        }
-
-        .footer-links a:hover {
-            opacity: 1;
-        }
-
-        .copyright {
-            opacity: 0.8;
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 768px) {
-            .values-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .page-header h1 {
-                font-size: 2rem;
-            }
-
-            .nav-links {
-                gap: 1rem;
-                font-size: 0.9rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .mobile-menu-toggle {
-                display: block;
-            }
-
-            .nav-links {
-                position: fixed;
-                top: 73px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 73px);
-                background-color: #f8f9fa;
-                flex-direction: column;
-                align-items: center;
-                justify-content: flex-start;
-                padding: 2rem;
-                gap: 1.5rem;
-                transition: left 0.3s ease;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            }
-
-            .nav-links.active {
-                left: 0;
-            }
-
-            .nav-links li {
-                width: 100%;
-                text-align: center;
-            }
-
-            .nav-links a {
-                display: block;
-                padding: 1rem;
-                font-size: 1.1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            /* Additional mobile styles if needed */
-        }
-    </style>
+    <meta property="og:title" content="About - Athonics">
+    <meta property="og:description" content="About Athonics - Our mission, methodology, and approach to data infrastructure and AI consulting.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://athonics.com/about.html">
+    <meta property="og:image" content="https://athonics.com/logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
     <nav>
         <div class="nav-container">
             <a href="/" class="logo">
                 <img src="logo.png" alt="Athonics Logo">
                 <span class="logo-text">athonics</span>
             </a>
-            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -382,181 +41,244 @@
         </div>
     </nav>
 
-    <div class="page-header">
-        <h1>About Athonics</h1>
-        <p>Building the future of data infrastructure, one system at a time</p>
-    </div>
+    <section class="page-header">
+        <div class="page-header-content">
+            <h1>About Athonics</h1>
+            <p>Building the future of data infrastructure, one system at a time</p>
+        </div>
+    </section>
 
-    <div class="container">
-        <section class="content-section">
-            <h2>Our Mission</h2>
-            <p>
-                Athonics exists to help organisations harness the full potential of their data. We believe that robust data infrastructure and thoughtful AI implementation are fundamental to modern business success—not just nice-to-haves.
-            </p>
-            <p>
-                Too often, companies struggle with data systems that are brittle, expensive to maintain, or simply don't deliver the value they should. We're here to change that. By combining proven engineering practices with deep technical expertise, we build data infrastructure that actually works for you, not against you.
-            </p>
-        </section>
+    <!-- Mission Section -->
+    <section class="section reveal">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Mission</h2>
+            </div>
+            <div class="mission-content">
+                <p>
+                    Athonics exists to help organisations harness the full potential of their data. We believe that robust data infrastructure and thoughtful AI implementation are fundamental to modern business success—not just nice-to-haves.
+                </p>
+                <p>
+                    Too often, companies struggle with data systems that are brittle, expensive to maintain, or simply don't deliver the value they should. We're here to change that. By combining proven engineering practices with deep technical expertise, we build data infrastructure that actually works for you, not against you.
+                </p>
+            </div>
+        </div>
+    </section>
 
-        <section class="content-section">
-            <h2>Our Methodology</h2>
-            <p>
-                Our approach is built on years of experience delivering data infrastructure projects across industries. We've refined a methodology that balances rigour with pragmatism—ensuring your systems are built right without getting bogged down in unnecessary complexity.
-            </p>
+    <!-- Methodology Timeline Section -->
+    <section class="section section-alt reveal">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Methodology</h2>
+                <p>Our approach is built on years of experience delivering data infrastructure projects across industries. We've refined a methodology that balances rigour with pragmatism—ensuring your systems are built right without getting bogged down in unnecessary complexity.</p>
+            </div>
 
-            <div class="methodology-steps">
-                <div class="step">
+            <div class="timeline">
+                <div class="timeline-step reveal">
                     <div class="step-number">01</div>
-                    <h4>Discovery & Assessment</h4>
-                    <p>We start by understanding your business goals, technical landscape, and pain points. This isn't just box-ticking—we dig deep to uncover the real requirements and constraints.</p>
+                    <div class="step-content">
+                        <h4>Discovery &amp; Assessment</h4>
+                        <p>We start by understanding your business goals, technical landscape, and pain points. This isn't just box-ticking—we dig deep to uncover the real requirements and constraints.</p>
+                    </div>
                 </div>
 
-                <div class="step">
+                <div class="timeline-step reveal">
                     <div class="step-number">02</div>
-                    <h4>Design & Architecture</h4>
-                    <p>We design solutions that fit your context. Whether you need real-time streaming, batch processing, or hybrid approaches, we architect systems that are scalable, maintainable, and cost-effective.</p>
+                    <div class="step-content">
+                        <h4>Design &amp; Architecture</h4>
+                        <p>We design solutions that fit your context. Whether you need real-time streaming, batch processing, or hybrid approaches, we architect systems that are scalable, maintainable, and cost-effective.</p>
+                    </div>
                 </div>
 
-                <div class="step">
+                <div class="timeline-step reveal">
                     <div class="step-number">03</div>
-                    <h4>Iterative Implementation</h4>
-                    <p>We build in short cycles with regular check-ins. This means you see progress quickly, can provide feedback early, and we can adapt as we learn more about your needs.</p>
+                    <div class="step-content">
+                        <h4>Iterative Implementation</h4>
+                        <p>We build in short cycles with regular check-ins. This means you see progress quickly, can provide feedback early, and we can adapt as we learn more about your needs.</p>
+                    </div>
                 </div>
 
-                <div class="step">
+                <div class="timeline-step reveal">
                     <div class="step-number">04</div>
-                    <h4>Testing & Validation</h4>
-                    <p>Every system we build is thoroughly tested—from data quality checks to performance benchmarks. We don't ship until we're confident it works as intended.</p>
+                    <div class="step-content">
+                        <h4>Testing &amp; Validation</h4>
+                        <p>Every system we build is thoroughly tested—from data quality checks to performance benchmarks. We don't ship until we're confident it works as intended.</p>
+                    </div>
                 </div>
 
-                <div class="step">
+                <div class="timeline-step reveal">
                     <div class="step-number">05</div>
-                    <h4>Knowledge Transfer</h4>
-                    <p>We don't believe in building black boxes. Through documentation, training, and hands-on collaboration, we ensure your team can operate and evolve the systems we build.</p>
+                    <div class="step-content">
+                        <h4>Knowledge Transfer</h4>
+                        <p>We don't believe in building black boxes. Through documentation, training, and hands-on collaboration, we ensure your team can operate and evolve the systems we build.</p>
+                    </div>
                 </div>
 
-                <div class="step">
+                <div class="timeline-step reveal">
                     <div class="step-number">06</div>
-                    <h4>Continuous Support</h4>
-                    <p>Our relationship doesn't end at deployment. We provide ongoing support, monitoring, and optimisation to ensure your infrastructure continues delivering value.</p>
+                    <div class="step-content">
+                        <h4>Continuous Support</h4>
+                        <p>Our relationship doesn't end at deployment. We provide ongoing support, monitoring, and optimisation to ensure your infrastructure continues delivering value.</p>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="content-section">
-            <h2>Our Values</h2>
-            <p>
-                These principles guide how we work with clients and build systems:
-            </p>
+    <!-- Values Section -->
+    <section class="section reveal">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Values</h2>
+                <p>These principles guide how we work with clients and build systems:</p>
+            </div>
 
             <div class="values-grid">
-                <div class="value-card">
-                    <div class="value-icon">🎯</div>
+                <div class="value-card reveal">
+                    <div class="value-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <circle cx="12" cy="12" r="6"></circle>
+                            <circle cx="12" cy="12" r="2"></circle>
+                        </svg>
+                    </div>
                     <h4>Outcome-Focused</h4>
                     <p>We care about business results, not just technical elegance. Every decision is measured against whether it helps you achieve your goals.</p>
                 </div>
 
-                <div class="value-card">
-                    <div class="value-icon">🔧</div>
+                <div class="value-card reveal">
+                    <div class="value-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                        </svg>
+                    </div>
                     <h4>Pragmatic Engineering</h4>
                     <p>We balance best practices with practical constraints. The "right" solution is the one that works for your context, timeline, and budget.</p>
                 </div>
 
-                <div class="value-card">
-                    <div class="value-icon">💬</div>
+                <div class="value-card reveal">
+                    <div class="value-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                    </div>
                     <h4>Transparent Communication</h4>
                     <p>No surprises, no jargon. We explain what we're doing, why we're doing it, and what trade-offs we're making along the way.</p>
                 </div>
 
-                <div class="value-card">
-                    <div class="value-icon">🚀</div>
+                <div class="value-card reveal">
+                    <div class="value-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 2L11 13"></path>
+                            <path d="M22 2L15 22L11 13L2 9L22 2Z"></path>
+                        </svg>
+                    </div>
                     <h4>Long-term Partnership</h4>
                     <p>We're not here to build something and disappear. We're invested in your success over the long term, adapting and evolving with your needs.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="content-section">
-            <h2>Why Work With Us</h2>
+    <!-- Why Work With Us Section -->
+    <section class="section section-alt reveal">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Work With Us</h2>
+            </div>
 
             <div class="differentiators">
                 <h3>What Sets Us Apart</h3>
-                <ul>
-                    <li><strong>Proven Track Record:</strong> We've built data systems for organisations ranging from fast-growing startups to established enterprises, across finance, healthcare, e-commerce, and beyond.</li>
-
-                    <li><strong>Technical Depth:</strong> Our team has deep expertise in modern data stacks, cloud platforms, and AI/ML technologies. We stay current with the latest tools and best practices.</li>
-
-                    <li><strong>Business Perspective:</strong> We're not just technologists—we understand business context, ROI considerations, and how to balance technical excellence with pragmatic delivery.</li>
-
-                    <li><strong>Collaborative Approach:</strong> We work alongside your team, not in isolation. You'll have visibility into our work and influence over decisions at every stage.</li>
-
-                    <li><strong>Quality Without Compromise:</strong> We don't cut corners on data quality, testing, or documentation. These fundamentals are what separate systems that last from those that become liabilities.</li>
-
-                    <li><strong>Flexible Engagement:</strong> Whether you need a one-off project, ongoing support, or something in between, we adapt to your needs.</li>
+                <ul class="differentiators-list">
+                    <li>
+                        <strong>Proven Track Record:</strong> We've built data systems for organisations ranging from fast-growing startups to established enterprises, across finance, healthcare, e-commerce, and beyond.
+                    </li>
+                    <li>
+                        <strong>Technical Depth:</strong> Our team has deep expertise in modern data stacks, cloud platforms, and AI/ML technologies. We stay current with the latest tools and best practices.
+                    </li>
+                    <li>
+                        <strong>Business Perspective:</strong> We're not just technologists—we understand business context, ROI considerations, and how to balance technical excellence with pragmatic delivery.
+                    </li>
+                    <li>
+                        <strong>Collaborative Approach:</strong> We work alongside your team, not in isolation. You'll have visibility into our work and influence over decisions at every stage.
+                    </li>
+                    <li>
+                        <strong>Quality Without Compromise:</strong> We don't cut corners on data quality, testing, or documentation. These fundamentals are what separate systems that last from those that become liabilities.
+                    </li>
+                    <li>
+                        <strong>Flexible Engagement:</strong> Whether you need a one-off project, ongoing support, or something in between, we adapt to your needs.
+                    </li>
                 </ul>
             </div>
-        </section>
-
-        <section class="content-section">
-            <h2>Our Approach to AI</h2>
-            <p>
-                AI is transforming how businesses operate, but cutting through the hype to find practical, valuable applications requires experience and judgement. We help organisations:
-            </p>
-            <p>
-                <strong>Identify real opportunities:</strong> Not every problem needs AI, and not every AI use case delivers value. We help you focus on applications that genuinely move the needle for your business.
-            </p>
-            <p>
-                <strong>Build production-ready systems:</strong> There's a big gap between a proof-of-concept and a reliable production system. We bridge that gap with robust engineering, proper monitoring, and realistic expectations.
-            </p>
-            <p>
-                <strong>Navigate the landscape:</strong> The AI ecosystem moves fast. We stay on top of emerging technologies and best practices so you don't have to, recommending tools and approaches that fit your specific context.
-            </p>
-        </section>
-    </div>
-
-    <section class="cta-section">
-        <h2>Let's Talk About Your Project</h2>
-        <p>Ready to build data infrastructure that actually works? Get in touch.</p>
-        <a href="contact.html" class="cta-button">Contact Us</a>
+        </div>
     </section>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="/">Home</a>
-                <a href="services.html">Services</a>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
+    <!-- Our Approach to AI Section -->
+    <section class="section reveal">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Approach to AI</h2>
             </div>
-            <p class="copyright">&copy; 2025 Athonics. All rights reserved.</p>
+            <div class="ai-approach">
+                <p>
+                    AI is transforming how businesses operate, but cutting through the hype to find practical, valuable applications requires experience and judgement. We help organisations:
+                </p>
+                <div class="approach-items">
+                    <div class="approach-item reveal">
+                        <h4>Identify real opportunities</h4>
+                        <p>Not every problem needs AI, and not every AI use case delivers value. We help you focus on applications that genuinely move the needle for your business.</p>
+                    </div>
+                    <div class="approach-item reveal">
+                        <h4>Build production-ready systems</h4>
+                        <p>There's a big gap between a proof-of-concept and a reliable production system. We bridge that gap with robust engineering, proper monitoring, and realistic expectations.</p>
+                    </div>
+                    <div class="approach-item reveal">
+                        <h4>Navigate the landscape</h4>
+                        <p>The AI ecosystem moves fast. We stay on top of emerging technologies and best practices so you don't have to, recommending tools and approaches that fit your specific context.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section reveal">
+        <div class="container">
+            <h2>Let's Talk About Your Project</h2>
+            <p>Ready to build data infrastructure that actually works? Get in touch.</p>
+            <a href="contact.html" class="cta-button">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="/" class="logo">
+                        <img src="Logo/logo-white.png" alt="Athonics Logo" style="height:32px;">
+                        <span class="logo-text" style="color:#fff;">athonics</span>
+                    </a>
+                    <p>Data Infrastructure &amp; AI Consulting</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Pages</h4>
+                    <a href="/">Home</a>
+                    <a href="services.html">Services</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <a href="mailto:sam@athonics.com">sam@athonics.com</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Athonics. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
-    <script>
-        // Mobile menu toggle
-        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-        const navLinks = document.getElementById('nav-links');
-
-        mobileMenuToggle.addEventListener('click', () => {
-            mobileMenuToggle.classList.toggle('active');
-            navLinks.classList.toggle('active');
-        });
-
-        // Close menu when clicking on a link
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenuToggle.classList.remove('active');
-                navLinks.classList.remove('active');
-            });
-        });
-
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('nav')) {
-                mobileMenuToggle.classList.remove('active');
-                navLinks.classList.remove('active');
-            }
-        });
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>

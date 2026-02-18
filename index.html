@@ -5,409 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Athonics - Expert consulting in data infrastructure, AI solutions, and long-term data management. Proven methodologies for technical excellence.">
     <title>Athonics - Data Infrastructure & AI Consulting</title>
+    <meta property="og:title" content="Athonics - Data Infrastructure & AI Consulting">
+    <meta property="og:description" content="Expert consulting in data infrastructure, AI solutions, and long-term data management. Proven methodologies for technical excellence.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://athonics.com/">
+    <meta property="og:image" content="https://athonics.com/logo.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="shortcut icon" href="favicon.ico">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary-color: #FF5349;
-            --primary-dark: #CC422A;
-            --primary-light: #FF7A72;
-            --secondary-color: #1a1a1a;
-            --accent-color: #00D4AA;
-            --text-primary: #1a1a1a;
-            --text-secondary: #666666;
-            --bg-light: #f5f5f5;
-            --bg-dark: #0a0a0a;
-            --border-color: #e0e0e0;
-            --white: #ffffff;
-        }
-
-        body {
-            font-family: Monaco, 'Courier New', monospace;
-            line-height: 1.6;
-            color: var(--text-primary);
-            background-color: var(--white);
-        }
-
-        /* Navigation */
-        nav {
-            background-color: #f8f9fa;
-            border-bottom: 1px solid var(--border-color);
-            padding: 1rem 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            text-decoration: none;
-        }
-
-        .logo img {
-            height: 40px;
-            width: auto;
-        }
-
-        .logo-text {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--secondary-color);
-            letter-spacing: -0.5px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--primary-color);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--bg-dark) 0%, var(--secondary-color) 100%);
-            color: var(--white);
-            padding: 6rem 2rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 30% 50%, rgba(255, 83, 73, 0.15) 0%, transparent 50%);
-            pointer-events: none;
-        }
-
-        .hero-content {
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-            line-height: 1.2;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-            line-height: 1.7;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 1rem 2.5rem;
-            font-size: 1.1rem;
-            font-weight: 600;
-            text-decoration: none;
-            border-radius: 6px;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-
-        .cta-button:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-2px);
-        }
-
-        /* Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
-
-        /* Introduction Section */
-        .intro-section {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .intro-section h2 {
-            font-size: 2.5rem;
-            color: var(--secondary-color);
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .intro-section p {
-            font-size: 1.15rem;
-            color: var(--text-secondary);
-            max-width: 800px;
-            margin: 0 auto;
-            line-height: 1.8;
-        }
-
-        /* Services Grid */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .service-card {
-            background-color: var(--white);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 2.5rem;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(255, 83, 73, 0.15);
-            border-color: var(--primary-light);
-        }
-
-        .service-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .service-card h3 {
-            font-size: 1.5rem;
-            color: var(--secondary-color);
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-
-        .service-card p {
-            color: var(--text-secondary);
-            line-height: 1.7;
-            margin-bottom: 1rem;
-        }
-
-        .service-card ul {
-            list-style: none;
-            margin-top: 1rem;
-        }
-
-        .service-card li {
-            color: var(--text-secondary);
-            padding: 0.4rem 0;
-            position: relative;
-            padding-left: 1.5rem;
-        }
-
-        .service-card li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--primary-color);
-            font-weight: bold;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            background-color: var(--bg-light);
-            padding: 4rem 2rem;
-            text-align: center;
-            margin-top: 4rem;
-        }
-
-        .cta-section h2 {
-            font-size: 2.5rem;
-            color: var(--secondary-color);
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .cta-section p {
-            font-size: 1.15rem;
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--secondary-color);
-            color: var(--white);
-            padding: 3rem 2rem 2rem;
-            text-align: center;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: var(--white);
-            text-decoration: none;
-            opacity: 0.9;
-            transition: opacity 0.3s;
-        }
-
-        .footer-links a:hover {
-            opacity: 1;
-        }
-
-        .copyright {
-            opacity: 0.8;
-            font-size: 0.9rem;
-        }
-
-        /* Mobile Menu */
-        .mobile-menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 0.5rem;
-            z-index: 1001;
-        }
-
-        .mobile-menu-toggle span {
-            display: block;
-            width: 25px;
-            height: 3px;
-            background-color: var(--secondary-color);
-            margin: 5px 0;
-            transition: 0.3s;
-        }
-
-        .mobile-menu-toggle.active span:nth-child(1) {
-            transform: rotate(-45deg) translate(-5px, 6px);
-        }
-
-        .mobile-menu-toggle.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .mobile-menu-toggle.active span:nth-child(3) {
-            transform: rotate(45deg) translate(-5px, -6px);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1.1rem;
-            }
-
-            .intro-section h2,
-            .cta-section h2 {
-                font-size: 2rem;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .nav-links {
-                gap: 1rem;
-            }
-
-            nav {
-                padding: 1rem;
-            }
-
-            .container {
-                padding: 3rem 1rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .mobile-menu-toggle {
-                display: block;
-            }
-
-            .nav-links {
-                position: fixed;
-                top: 73px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 73px);
-                background-color: #f8f9fa;
-                flex-direction: column;
-                align-items: center;
-                justify-content: flex-start;
-                padding: 2rem;
-                gap: 1.5rem;
-                transition: left 0.3s ease;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            }
-
-            .nav-links.active {
-                left: 0;
-            }
-
-            .nav-links li {
-                width: 100%;
-                text-align: center;
-            }
-
-            .nav-links a {
-                display: block;
-                padding: 1rem;
-                font-size: 1.1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 1.75rem;
-            }
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
@@ -415,16 +29,16 @@
                 <img src="logo.png" alt="Athonics Logo">
                 <span class="logo-text">athonics</span>
             </a>
-            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
             <ul class="nav-links" id="nav-links">
-                <li><a href="/">Home</a></li>
+                <li><a href="/" class="active">Home</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
             </ul>
         </div>
     </nav>
@@ -432,25 +46,39 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Expert Data Infrastructure & AI Solutions</h1>
-            <p>Transform your data challenges into competitive advantages with proven methodologies and technical excellence. We deliver scalable infrastructure, AI implementation, and long-term support for forward-thinking organisations.</p>
-            <a href="#contact" class="cta-button">Start a Conversation</a>
+            <div class="hero-badge">
+                <span class="dot"></span>
+                Data Infrastructure & AI Consulting
+            </div>
+            <h1>Expert Data Infrastructure &amp; <span class="gradient-text">AI Solutions</span></h1>
+            <p class="subtitle">Transform your data challenges into competitive advantages with proven methodologies and technical excellence. We deliver scalable infrastructure, AI implementation, and long-term support for forward-thinking organisations.</p>
+            <div class="hero-buttons">
+                <a href="contact.html" class="btn btn-primary">
+                    Start a Conversation
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+                <a href="services.html" class="btn btn-secondary">
+                    View Services
+                </a>
+            </div>
         </div>
     </section>
 
-    <!-- Introduction -->
-    <div class="container">
-        <section class="intro-section">
-            <h2>Built for Technical Excellence</h2>
-            <p>Athonics partners with technical decision-makers and business leaders to design, implement, and maintain robust data infrastructure and AI solutions. Our proven methodology ensures your systems are built right the first time and evolve with your needs.</p>
-        </section>
+    <!-- What We Do -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">What We Do</span>
+                <h2>Built for Technical Excellence</h2>
+                <p>Athonics partners with technical decision-makers and business leaders to design, implement, and maintain robust data infrastructure and AI solutions. Our proven methodology ensures your systems are built right the first time and evolve with your needs.</p>
+            </div>
 
-        <!-- Services Section -->
-        <section id="services">
-            <div class="services-grid">
-                <!-- Service 1: Data Infrastructure -->
-                <div class="service-card">
-                    <div class="service-icon">⚙️</div>
+            <div class="services-grid" id="services">
+                <!-- Data Infrastructure -->
+                <div class="service-card reveal reveal-delay-1">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    </div>
                     <h3>Data Infrastructure Consulting</h3>
                     <p>Design and implement scalable, maintainable data pipelines and platforms tailored to your business needs.</p>
                     <ul>
@@ -461,9 +89,11 @@
                     </ul>
                 </div>
 
-                <!-- Service 2: Long-term Management -->
-                <div class="service-card">
-                    <div class="service-icon">🔧</div>
+                <!-- Long-term Management -->
+                <div class="service-card reveal reveal-delay-2">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                    </div>
                     <h3>Long-term Data Management</h3>
                     <p>Ongoing support and optimisation to ensure your data infrastructure continues delivering value.</p>
                     <ul>
@@ -474,10 +104,12 @@
                     </ul>
                 </div>
 
-                <!-- Service 3: AI Solutions -->
-                <div class="service-card">
-                    <div class="service-icon">🤖</div>
-                    <h3>AI Solutions & Advisory</h3>
+                <!-- AI Solutions -->
+                <div class="service-card reveal reveal-delay-3">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 1 4 4c0 1.95-1.4 3.58-3.25 3.93L12 22"/><path d="M12 2a4 4 0 0 0-4 4c0 1.95 1.4 3.58 3.25 3.93"/><path d="M8.56 13a8 8 0 0 0-2.3 3.21"/><path d="M15.44 13a8 8 0 0 1 2.3 3.21"/><path d="M6 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/><path d="M18 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg>
+                    </div>
+                    <h3>AI Solutions &amp; Advisory</h3>
                     <p>Strategic guidance and hands-on implementation for AI adoption and integration into your business.</p>
                     <ul>
                         <li>AI strategy consulting</li>
@@ -487,52 +119,121 @@
                     </ul>
                 </div>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item reveal reveal-delay-1">
+                    <div class="stat-number" data-target="50">50+</div>
+                    <div class="stat-label">Data Pipelines Deployed</div>
+                </div>
+                <div class="stat-item reveal reveal-delay-2">
+                    <div class="stat-number" data-target="99">99%</div>
+                    <div class="stat-label">Client Satisfaction</div>
+                </div>
+                <div class="stat-item reveal reveal-delay-3">
+                    <div class="stat-number" data-target="10">10+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-item reveal reveal-delay-4">
+                    <div class="stat-number" data-target="24">24/7</div>
+                    <div class="stat-label">Ongoing Support</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology Preview -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Our Approach</span>
+                <h2>Proven Methodology</h2>
+                <p>A structured, repeatable approach that delivers results. Every engagement follows our battle-tested framework.</p>
+            </div>
+
+            <div class="methodology-grid">
+                <div class="methodology-step reveal reveal-delay-1">
+                    <div class="step-number">01</div>
+                    <h3>Discover</h3>
+                    <p>Deep-dive into your data landscape, pain points, and business objectives.</p>
+                </div>
+                <div class="methodology-step reveal reveal-delay-2">
+                    <div class="step-number">02</div>
+                    <h3>Architect</h3>
+                    <p>Design robust, scalable solutions tailored to your specific needs.</p>
+                </div>
+                <div class="methodology-step reveal reveal-delay-3">
+                    <div class="step-number">03</div>
+                    <h3>Implement</h3>
+                    <p>Build and deploy with modern best practices and rigorous testing.</p>
+                </div>
+                <div class="methodology-step reveal reveal-delay-4">
+                    <div class="step-number">04</div>
+                    <h3>Evolve</h3>
+                    <p>Continuous optimisation, monitoring, and long-term partnership.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- CTA Section -->
-    <section class="cta-section" id="contact">
-        <h2>Ready to Transform Your Data Infrastructure?</h2>
-        <p>Let's discuss how Athonics can help you build scalable, maintainable solutions that drive real business value.</p>
-        <a href="mailto:sam@athonics.com" class="cta-button">Get in Touch</a>
+    <section class="cta-section cta-dark" id="contact">
+        <div class="cta-content">
+            <h2>Ready to Transform Your Data Infrastructure?</h2>
+            <p>Let's discuss how Athonics can help you build scalable, maintainable solutions that drive real business value.</p>
+            <a href="mailto:sam@athonics.com" class="btn btn-primary">
+                Get in Touch
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+        </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="#services">Services</a>
-                <a href="#contact">Contact</a>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="/" class="logo">
+                        <img src="Logo/logo-white.png" alt="Athonics Logo" style="height:32px;">
+                        <span class="logo-text" style="color:#fff;">athonics</span>
+                    </a>
+                    <p>Expert consulting in data infrastructure, AI solutions, and long-term data management. Proven methodologies for technical excellence.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <a href="services.html">Data Infrastructure</a>
+                    <a href="services.html">Long-term Management</a>
+                    <a href="services.html">AI Solutions</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="about.html">About</a>
+                    <a href="about.html">Methodology</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Get in Touch</h4>
+                    <a href="mailto:sam@athonics.com">sam@athonics.com</a>
+                </div>
             </div>
-            <p class="copyright">&copy; 2025 Athonics. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Athonics. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
-    <script>
-        // Mobile menu toggle
-        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-        const navLinks = document.getElementById('nav-links');
+    <!-- Floating CTA -->
+    <div class="floating-cta" id="floating-cta">
+        <a href="contact.html">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Let's Talk
+        </a>
+    </div>
 
-        mobileMenuToggle.addEventListener('click', () => {
-            mobileMenuToggle.classList.toggle('active');
-            navLinks.classList.toggle('active');
-        });
-
-        // Close menu when clicking on a link
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenuToggle.classList.remove('active');
-                navLinks.classList.remove('active');
-            });
-        });
-
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('nav')) {
-                mobileMenuToggle.classList.remove('active');
-                navLinks.classList.remove('active');
-            }
-        });
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>

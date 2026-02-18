@@ -5,374 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Contact Athonics for data infrastructure and AI consulting services. Get in touch to discuss your project.">
     <title>Contact - Athonics</title>
+    <meta property="og:title" content="Contact - Athonics">
+    <meta property="og:description" content="Contact Athonics for data infrastructure and AI consulting services. Get in touch to discuss your project.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://athonics.com/contact.html">
+    <meta property="og:image" content="https://athonics.com/logo.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="shortcut icon" href="favicon.ico">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary-color: #FF5349;
-            --primary-dark: #CC422A;
-            --primary-light: #FF7A72;
-            --secondary-color: #1a1a1a;
-            --accent-color: #00D4AA;
-            --text-primary: #1a1a1a;
-            --text-secondary: #666666;
-            --bg-light: #f5f5f5;
-            --bg-dark: #0a0a0a;
-            --border-color: #e0e0e0;
-            --white: #ffffff;
-        }
-
-        body {
-            font-family: Monaco, 'Courier New', monospace;
-            line-height: 1.6;
-            color: var(--text-primary);
-            background-color: var(--white);
-        }
-
-        nav {
-            background-color: #f8f9fa;
-            border-bottom: 1px solid var(--border-color);
-            padding: 1rem 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            text-decoration: none;
-        }
-
-        .logo img {
-            height: 40px;
-            width: auto;
-        }
-
-        .logo-text {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--secondary-color);
-            letter-spacing: -0.5px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--primary-color);
-        }
-
-        .page-header {
-            background: linear-gradient(135deg, var(--bg-dark) 0%, var(--secondary-color) 100%);
-            color: var(--white);
-            padding: 4rem 2rem 3rem;
-            text-align: center;
-        }
-
-        .page-header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .page-header p {
-            font-size: 1.15rem;
-            opacity: 0.9;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
-
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            margin-top: 2rem;
-        }
-
-        .contact-info {
-            background-color: var(--bg-light);
-            padding: 3rem;
-            border-radius: 8px;
-        }
-
-        .contact-info h2 {
-            font-size: 1.8rem;
-            color: var(--secondary-color);
-            margin-bottom: 2rem;
-            font-weight: 700;
-        }
-
-        .contact-method {
-            margin-bottom: 2.5rem;
-        }
-
-        .contact-method:last-child {
-            margin-bottom: 0;
-        }
-
-        .contact-method h3 {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .contact-method p {
-            font-size: 1.1rem;
-            color: var(--text-primary);
-        }
-
-        .contact-method a {
-            color: var(--primary-color);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .contact-method a:hover {
-            color: var(--primary-dark);
-        }
-
-        .response-time {
-            background-color: var(--white);
-            padding: 1.5rem;
-            border-radius: 6px;
-            border-left: 4px solid var(--accent-color);
-            margin-top: 2rem;
-        }
-
-        .response-time p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        .contact-details {
-            padding-top: 1rem;
-        }
-
-        .contact-details h2 {
-            font-size: 1.8rem;
-            color: var(--secondary-color);
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-        }
-
-        .contact-details p {
-            color: var(--text-secondary);
-            font-size: 1.05rem;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-
-        .engagement-types {
-            margin-top: 2rem;
-        }
-
-        .engagement-types h3 {
-            font-size: 1.3rem;
-            color: var(--secondary-color);
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-
-        .engagement-types ul {
-            list-style: none;
-        }
-
-        .engagement-types li {
-            color: var(--text-secondary);
-            padding: 0.75rem 0;
-            padding-left: 1.75rem;
-            position: relative;
-            line-height: 1.6;
-        }
-
-        .engagement-types li:before {
-            content: "›";
-            position: absolute;
-            left: 0;
-            color: var(--primary-color);
-            font-weight: bold;
-            font-size: 1.5rem;
-        }
-
-        .cta-box {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
-            color: var(--white);
-            padding: 3rem;
-            border-radius: 8px;
-            text-align: center;
-            margin-top: 4rem;
-        }
-
-        .cta-box h2 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .cta-box p {
-            font-size: 1.05rem;
-            opacity: 0.95;
-            margin-bottom: 2rem;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background-color: var(--white);
-            color: var(--primary-color);
-            padding: 1rem 2.5rem;
-            font-size: 1.1rem;
-            font-weight: 600;
-            text-decoration: none;
-            border-radius: 6px;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-
-        .cta-button:hover {
-            background-color: var(--bg-light);
-            transform: translateY(-2px);
-        }
-
-        footer {
-            background-color: var(--secondary-color);
-            color: var(--white);
-            padding: 3rem 2rem 2rem;
-            text-align: center;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: var(--white);
-            text-decoration: none;
-            opacity: 0.9;
-            transition: opacity 0.3s;
-        }
-
-        .footer-links a:hover {
-            opacity: 1;
-        }
-
-        .copyright {
-            opacity: 0.8;
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 768px) {
-            .contact-content {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-
-            .contact-info {
-                padding: 2rem;
-            }
-
-            .page-header h1 {
-                font-size: 2rem;
-            }
-
-            .nav-links {
-                gap: 1rem;
-                font-size: 0.9rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .mobile-menu-toggle {
-                display: block;
-            }
-
-            .nav-links {
-                position: fixed;
-                top: 73px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 73px);
-                background-color: #f8f9fa;
-                flex-direction: column;
-                align-items: center;
-                justify-content: flex-start;
-                padding: 2rem;
-                gap: 1.5rem;
-                transition: left 0.3s ease;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            }
-
-            .nav-links.active {
-                left: 0;
-            }
-
-            .nav-links li {
-                width: 100%;
-                text-align: center;
-            }
-
-            .nav-links a {
-                display: block;
-                padding: 1rem;
-                font-size: 1.1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            /* Additional mobile styles if needed */
-        }
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="scroll-progress" id="scroll-progress"></div>
+
     <nav>
         <div class="nav-container">
             <a href="/" class="logo">
                 <img src="logo.png" alt="Athonics Logo">
                 <span class="logo-text">athonics</span>
             </a>
-            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -386,105 +41,157 @@
         </div>
     </nav>
 
-    <div class="page-header">
-        <h1>Get in Touch</h1>
-        <p>Let's discuss how we can help with your data infrastructure and AI initiatives</p>
-    </div>
+    <section class="page-header">
+        <div class="page-header-content">
+            <h1 class="reveal">Get in Touch</h1>
+            <p class="reveal">Let's discuss how we can help with your data infrastructure and AI initiatives</p>
+        </div>
+    </section>
 
-    <div class="container">
-        <div class="contact-content">
-            <div class="contact-info">
-                <h2>Contact Information</h2>
+    <section class="section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-card reveal">
+                    <h2>Contact Information</h2>
 
-                <div class="contact-method">
-                    <h3>Email</h3>
-                    <p><a href="mailto:sam@athonics.com">sam@athonics.com</a></p>
+                    <div class="contact-method">
+                        <div class="contact-method-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3>Email</h3>
+                            <p><a href="mailto:sam@athonics.com">sam@athonics.com</a></p>
+                        </div>
+                    </div>
+
+                    <div class="response-time">
+                        <div class="response-time-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                        </div>
+                        <p><strong>Response Time:</strong> We typically respond to all enquiries within 24 hours during business days. For urgent matters, please mention this in your subject line.</p>
+                    </div>
                 </div>
 
-                <div class="response-time">
-                    <p><strong>Response Time:</strong> We typically respond to all enquiries within 24 hours during business days. For urgent matters, please mention this in your subject line.</p>
+                <div class="contact-details reveal">
+                    <h2>How We Can Help</h2>
+                    <p>
+                        Whether you're looking to build new data infrastructure, optimise existing systems, explore AI opportunities, or need ongoing support, we're here to help.
+                    </p>
+                    <p>
+                        When you reach out, it's helpful to share:
+                    </p>
+
+                    <div class="engagement-types">
+                        <ul>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                                A brief description of your project or challenge
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                                Your timeline and any key constraints
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                                What success looks like for you
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                                Your preferred engagement model (if known)
+                            </li>
+                        </ul>
+                    </div>
+
+                    <p>
+                        Don't worry if you're not sure about the details yet—initial conversations are exploratory, and we're happy to help you clarify your needs.
+                    </p>
+
+                    <div class="engagement-types">
+                        <h3>Engagement Options</h3>
+                        <ul>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                                Project-based consulting
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                                Ongoing support retainers
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                                Technical advisory
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                                Team augmentation
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                                Training and workshops
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
-            <div class="contact-details">
-                <h2>How We Can Help</h2>
-                <p>
-                    Whether you're looking to build new data infrastructure, optimise existing systems, explore AI opportunities, or need ongoing support, we're here to help.
-                </p>
-                <p>
-                    When you reach out, it's helpful to share:
-                </p>
-
-                <div class="engagement-types">
-                    <ul>
-                        <li>A brief description of your project or challenge</li>
-                        <li>Your timeline and any key constraints</li>
-                        <li>What success looks like for you</li>
-                        <li>Your preferred engagement model (if known)</li>
-                    </ul>
-                </div>
-
-                <p style="margin-top: 2rem;">
-                    Don't worry if you're not sure about the details yet—initial conversations are exploratory, and we're happy to help you clarify your needs.
-                </p>
-
-                <div class="engagement-types">
-                    <h3>Engagement Options</h3>
-                    <ul>
-                        <li>Project-based consulting</li>
-                        <li>Ongoing support retainers</li>
-                        <li>Technical advisory</li>
-                        <li>Team augmentation</li>
-                        <li>Training and workshops</li>
-                    </ul>
-                </div>
+            <div class="cta-box reveal">
+                <h2>Ready to Start?</h2>
+                <p>Drop us an email and let's begin the conversation.</p>
+                <a href="mailto:sam@athonics.com" class="cta-button">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="4" width="20" height="16" rx="2"/>
+                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                    </svg>
+                    Email Us
+                </a>
             </div>
         </div>
+    </section>
 
-        <div class="cta-box">
-            <h2>Ready to Start?</h2>
-            <p>Drop us an email and let's begin the conversation.</p>
-            <a href="mailto:sam@athonics.com" class="cta-button">Email Us</a>
-        </div>
+    <div class="floating-cta" id="floating-cta">
+        <a href="mailto:sam@athonics.com" aria-label="Email us">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+            </svg>
+            Email Us
+        </a>
     </div>
 
     <footer>
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="/">Home</a>
-                <a href="services.html">Services</a>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="/" class="logo">
+                        <img src="Logo/logo-white.png" alt="Athonics Logo" style="height:32px;">
+                        <span class="logo-text" style="color:#fff;">athonics</span>
+                    </a>
+                    <p>Data Infrastructure &amp; AI Consulting</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <a href="/">Home</a>
+                    <a href="services.html">Services</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <a href="mailto:sam@athonics.com">sam@athonics.com</a>
+                </div>
             </div>
-            <p class="copyright">&copy; 2025 Athonics. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Athonics. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
-    <script>
-        // Mobile menu toggle
-        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-        const navLinks = document.getElementById('nav-links');
-
-        mobileMenuToggle.addEventListener('click', () => {
-            mobileMenuToggle.classList.toggle('active');
-            navLinks.classList.toggle('active');
-        });
-
-        // Close menu when clicking on a link
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenuToggle.classList.remove('active');
-                navLinks.classList.remove('active');
-            });
-        });
-
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('nav')) {
-                mobileMenuToggle.classList.remove('active');
-                navLinks.classList.remove('active');
-            }
-        });
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>
